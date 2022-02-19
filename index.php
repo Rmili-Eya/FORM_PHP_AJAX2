@@ -17,7 +17,7 @@
 
 </head>
 <body>
-<div class="container d-flex justify-content-center align-items-center height">
+<div class="container d-flex justify-content-between align-items-center height">
     <div class="card py-3">
         <div class="p-3 d-flex align-items-center justify-content-center">
             <h5>Formulaire</h5>
@@ -50,6 +50,9 @@
         </form>
         <p id="form-message"></p>
     </div>
+    <div class="gallery">
+        <img src="./uploads/default image.jpg" id="preImg" alt="erreur">
+    </div>
 </div>
 
 <script type="text/javascript">
@@ -69,12 +72,12 @@
 
         //When the form is submitted it means equal to 1
         if (res.status==1){
+        
         $('#form')[0].reset(); //resets the form 
         $('#form-message').html('<p>' + res.message + '</p>');
         toastr.success(res.message) ;
         }else{
         //error message will be shown 
-    
         $('#form-message').html('<p>' + res.message + '</p>'); 
         toastr.warning(res.message) ;
 
